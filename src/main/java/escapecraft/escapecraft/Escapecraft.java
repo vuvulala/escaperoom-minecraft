@@ -14,3 +14,4 @@ public final class Escapecraft extends JavaPlugin implements Listener {
         // Plugin shutdown logic
     }
 }
+;
