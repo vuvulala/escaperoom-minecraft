@@ -8,6 +8,7 @@ public final class Escapecraft extends JavaPlugin implements Listener {
     public void onEnable() {
         // Plugin startup logic
         this.getCommand("test").setExecutor(new CommandTest());
+        //asdas
     }
 
     public void onDisable() {
