@@ -3,7 +3,11 @@ version: ${project.version}
 main: escapecraft.escapecraft.Escapecraft
 api-version: 1.16
 commands:
-  test:
-    description: idfk, something i guess?
+  disable:
+    description: disable chat
+    usage: /<command>
+    permission: "3"
+  enable:
+    description: enable chat
     usage: /<command>
     permission: "3"
