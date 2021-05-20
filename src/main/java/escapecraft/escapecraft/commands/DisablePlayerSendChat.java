@@ -11,7 +11,10 @@ import java.util.Arrays;
 public class DisablePlayerSendChat implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (! (sender instanceof Player)) return false;
+
         Player player = (Player) sender;
+
         player.setDisplayName("Daddy");
         TextComponent message = new TextComponent("Click me daddy uwu");
         message.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/say :" + Arrays.toString(args)));

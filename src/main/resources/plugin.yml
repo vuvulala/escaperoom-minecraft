@@ -11,3 +11,7 @@ commands:
     description: enable chat
     usage: /<command>
     permission: "3"
+  quest:
+    description: do questions i guess
+    usage: /<command>
+    permission: "3"
