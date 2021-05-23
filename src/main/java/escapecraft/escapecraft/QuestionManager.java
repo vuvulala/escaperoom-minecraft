@@ -1,6 +1,5 @@
 package escapecraft.escapecraft;
 
-import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
@@ -12,7 +11,7 @@ public class QuestionManager {
     public static JsonObject getQuestion(String questionName) {
         JsonParser parser = new JsonParser();
         JsonObject object;
-        String json = "";
+        String json;
 
         try {
             System.out.println("Getting file " + "./plugins/escapecraft/" + questionName + ".json");
