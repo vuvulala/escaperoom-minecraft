@@ -12,10 +12,11 @@ public final class Escapecraft extends JavaPlugin implements Listener {
 
     public void onEnable() {
         // Plugin startup logic
+        new ChatCommand();
+
         broadcast("PEEPEEPOOPOO!");
         Bukkit.getPluginManager().registerEvents(new ChatManager(), this);
-        this.getCommand("disable").setExecutor(new DisablePlayerSendChat());
-        this.getCommand("enable").setExecutor(new EnablePlayerSendChat());
+
         this.getCommand("quest").setExecutor(new SendQuestionCommand());
     }
 
