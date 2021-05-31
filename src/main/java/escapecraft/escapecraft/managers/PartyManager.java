@@ -1,5 +1,6 @@
-package escapecraft.escapecraft;
+package escapecraft.escapecraft.managers;
 
+import escapecraft.escapecraft.Party;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
@@ -16,6 +17,9 @@ public class PartyManager {
 
     public static Party createParty(String partyname, CommandSender admin, Collection<Player> members) {
         Party tempParty = new Party(partyname, admin);
+        for(Player currentPlayer : members) {
+            tempParty.addPlayer(currentPlayer);
+        }
         parties.put(partyname, tempParty);
         return tempParty;
     }
@@ -31,5 +35,9 @@ public class PartyManager {
 
     public static String[] getAllAsString() {
         return parties.keySet().toArray(new String[0]);
+    }
+
+    public static Party get(String partyName) {
+        return parties.get(partyName);
     }
 }

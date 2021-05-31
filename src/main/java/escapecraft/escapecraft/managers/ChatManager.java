@@ -1,4 +1,4 @@
-package escapecraft.escapecraft;
+package escapecraft.escapecraft.managers;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

@@ -3,7 +3,7 @@ package escapecraft.escapecraft.commands;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import escapecraft.escapecraft.QuestionManager;
+import escapecraft.escapecraft.managers.QuestionManager;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;

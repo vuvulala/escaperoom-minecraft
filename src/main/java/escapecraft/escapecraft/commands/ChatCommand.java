@@ -2,7 +2,7 @@ package escapecraft.escapecraft.commands;
 
 import dev.jorel.commandapi.CommandAPICommand;
 import dev.jorel.commandapi.arguments.*;
-import escapecraft.escapecraft.ChatManager;
+import escapecraft.escapecraft.managers.ChatManager;
 
 import java.util.ArrayList;
 import java.util.List;
