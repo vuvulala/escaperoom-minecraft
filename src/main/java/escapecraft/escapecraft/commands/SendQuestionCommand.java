@@ -4,6 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import escapecraft.escapecraft.managers.QuestionManager;
+import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
@@ -35,7 +36,7 @@ public class SendQuestionCommand implements CommandExecutor {
         if(!QuestionManager.questionExists(currentQuizName)) {
             sender.sendMessage("That question doesn't exist!");
             return true;
-        }
+        };
 
         //gets the question form question manager
         JsonObject questionObject = QuestionManager.getQuestion(currentQuizName);
@@ -81,5 +82,7 @@ public class SendQuestionCommand implements CommandExecutor {
             //sends the answer to the person who sent the command
             sender.sendMessage(message);
         }
+
+        return;
     }
 }
