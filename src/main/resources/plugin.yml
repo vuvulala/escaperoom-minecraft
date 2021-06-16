@@ -2,7 +2,7 @@ name: Escapecraft
 version: ${project.version}
 main: escapecraft.escapecraft.Escapecraft
 api-version: 1.16
-depend: [CommandAPI]
+depend: [CommandAPI, InSignsPlus]
 commands:
   disable:
     description: disable chat
@@ -10,9 +10,5 @@ commands:
     permission: "3"
   enable:
     description: enable chat
-    usage: /<command>
-    permission: "3"
-  quest:
-    description: do questions i guess
     usage: /<command>
     permission: "3"
