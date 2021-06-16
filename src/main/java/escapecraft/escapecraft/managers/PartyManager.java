@@ -22,6 +22,7 @@ public class PartyManager {
         }
         parties.put(partyname, tempParty);
         return tempParty;
+        //hellp
     }
 
     public static boolean has(String partyName) {
