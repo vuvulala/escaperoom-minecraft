@@ -47,7 +47,7 @@ public class Party {
         }
     }
 
-    public void sendMessage(TextComponent message) {
+    public void sendMessage(TextComponent message) { //stiffy
         for(Player current : _members) {
             current.sendMessage(message);
         }
