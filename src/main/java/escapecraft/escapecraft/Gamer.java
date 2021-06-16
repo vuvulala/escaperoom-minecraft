@@ -1,15 +1,16 @@
 package escapecraft.escapecraft;
 
-import net.kyori.adventure.text.Component;
-import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
+import java.util.List;
 
-public abstract class Gamer implements Player {
+public class Gamer {
+    private List<QuestionObject> questionObjects;
 
-    public Gamer() {
-
+    Gamer(List<QuestionObject> questionObjects) {
+        this.questionObjects = questionObjects;
     }
 
-    public Integer questionNumber;
-    public String quiz;
+    public QuestionObject getQuestionObject(Integer index) { return this.questionObjects.get(index); }
+    public Boolean addQuestionObject(QuestionObject questionObject) { return this.questionObjects.add(questionObject); }
+    public Boolean addAllQuestionObjects(List<QuestionObject> questionObjects) { return this.questionObjects.addAll(questionObjects); }
+    public String getQuestion(Integer index) { return this.questionObjects.get(index).GetQuestion(); }
 }
