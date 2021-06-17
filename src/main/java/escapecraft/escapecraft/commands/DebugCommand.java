@@ -5,14 +5,13 @@ import dev.jorel.commandapi.CommandPermission;
 import dev.jorel.commandapi.arguments.Argument;
 import escapecraft.escapecraft.Escaperoom;
 import escapecraft.escapecraft.Gamer;
-import escapecraft.escapecraft.managers.ChatManager;
 import org.bukkit.event.Listener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Debug implements Listener {
-    public Debug() {
+public class DebugCommand implements Listener {
+    public DebugCommand() {
         List<Argument> arguments = new ArrayList<>();
 
         new CommandAPICommand("debug")

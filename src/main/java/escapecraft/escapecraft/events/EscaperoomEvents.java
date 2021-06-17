@@ -1,9 +1,7 @@
 package escapecraft.escapecraft.events;
 
 import escapecraft.escapecraft.AnswerObject;
-import escapecraft.escapecraft.Escaperoom;
 import escapecraft.escapecraft.Gamer;
-import escapecraft.escapecraft.QuestionObject;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
