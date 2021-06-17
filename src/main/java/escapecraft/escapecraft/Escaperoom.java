@@ -1,7 +1,6 @@
 package escapecraft.escapecraft;
 
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,6 +22,4 @@ public class Escaperoom {
     public static Gamer addGamer(Player player, Gamer gamer) { return gamers.put(player, gamer); }
     public static Gamer removeGamer(Player player) { return gamers.remove(player); }
     public static Gamer getGamer(Player player) { return gamers.get(player); }
-
-
 }

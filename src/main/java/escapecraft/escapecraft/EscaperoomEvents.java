@@ -23,11 +23,17 @@ public class EscaperoomEvents implements Listener {
 
         try {
             System.out.println("player joined. Trying to assemble gamer..");
+
+            ArrayList<AnswerObject> tmpAnswers = new ArrayList();
+            System.out.println("Assembling gamer..");
             answerObjects.add(new AnswerObject("svar 1", false));
             answerObjects.add(new AnswerObject("svar 2", false));
             answerObjects.add(new AnswerObject("svar 3", false));
-            answerObjects.add(new AnswerObject("svar 4", true));
-            gamer = new Gamer(answerObjects);
+            answerObjects.add(new AnswerObject("svar 4", true ));
+            ArrayList<QuestionObject> qu = new ArrayList<QuestionObject>();
+            qu.add(new QuestionObject(tmpAnswers));
+
+            gamer = new Gamer(qu);
             System.out.println("gaming!");
             System.out.println(gamer.getQuestion(1));
 

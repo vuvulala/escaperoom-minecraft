@@ -9,6 +9,6 @@ public class AnswerObject {
         this.isCorrect = isCorrect;
     }
 
-    public String GetQuestion() { return this.questionString; }
+    public String getText() { return this.questionString; }
     public Boolean IsCorrect() { return this.isCorrect; }
 }

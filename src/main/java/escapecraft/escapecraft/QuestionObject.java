@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class QuestionObject {
     private ArrayList<AnswerObject> answers = new ArrayList<AnswerObject>(4);
-    QuestionObject(ArrayList<AnswerObject> newAnswers) {
+    public QuestionObject(ArrayList<AnswerObject> newAnswers) {
         answers.addAll(newAnswers);
     }
 
-    QuestionObject() {
+    public QuestionObject() {
 
     }
 

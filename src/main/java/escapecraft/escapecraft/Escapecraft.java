@@ -26,13 +26,16 @@ public final class Escapecraft extends JavaPlugin implements Listener {
         new ChatCommand();
 
         Gamer gamer;
-        List<AnswerObject> answerObjects = new ArrayList();
+        ArrayList<AnswerObject> answerObjects = new ArrayList();
         System.out.println("Assembling gamer..");
         answerObjects.add(new AnswerObject("svar 1", false));
         answerObjects.add(new AnswerObject("svar 2", false));
         answerObjects.add(new AnswerObject("svar 3", false));
         answerObjects.add(new AnswerObject("svar 4", true ));
-        gamer = new Gamer(answerObjects);
+        ArrayList<QuestionObject> qu = new ArrayList<QuestionObject>();
+        qu.add(new QuestionObject(answerObjects));
+
+        gamer = new Gamer(qu);
         System.out.println("Assembly complete!");
         System.out.println(gamer.getQuestion(1));
 
