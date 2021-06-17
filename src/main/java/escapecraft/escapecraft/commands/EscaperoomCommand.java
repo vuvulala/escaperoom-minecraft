@@ -6,9 +6,7 @@ import com.google.gson.JsonObject;
 import dev.jorel.commandapi.CommandAPICommand;
 import dev.jorel.commandapi.CommandPermission;
 import dev.jorel.commandapi.arguments.IntegerArgument;
-import escapecraft.escapecraft.Escaperoom;
-import escapecraft.escapecraft.Gamer;
-import escapecraft.escapecraft.JsonLoader;
+import escapecraft.escapecraft.managers.JsonLoader;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
@@ -74,6 +72,9 @@ public class EscaperoomCommand implements Listener {
                     JsonLoader.setElement(path, element);
 
                     player.sendMessage("Deleted " + ChatColor.GOLD + "room " + (room+1) + " " + ChatColor.RESET + temp.toString());
+
+                    player.sendMessage("New rooms: \n\n");
+                    player.performCommand("escaperoom rooms");
                 }))
 
 

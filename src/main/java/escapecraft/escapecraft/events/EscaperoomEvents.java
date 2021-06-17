@@ -23,12 +23,12 @@ public class EscaperoomEvents implements Listener {
         Player player = event.getPlayer();
         Gamer gamer = new Gamer(player);
         Escaperoom.addGamer(player, gamer);
-        }
+    }
     @EventHandler
     public void OnPlayerQuit(PlayerQuitEvent event) {
         try {
-        Player player = event.getPlayer();
-        Escaperoom.removeGamer(player);
+            Player player = event.getPlayer();
+            Escaperoom.removeGamer(player);
         } catch(Exception e) {System.out.println(e);}
     }
 }
