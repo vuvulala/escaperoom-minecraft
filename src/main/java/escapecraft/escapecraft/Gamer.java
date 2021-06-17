@@ -5,7 +5,7 @@ import java.util.List;
 public class Gamer {
     private List<QuestionObject> questionObjects;
 
-    Gamer(List<QuestionObject> questionObjects) {
+    public Gamer(List<QuestionObject> questionObjects) {
         this.questionObjects = questionObjects;
     }
 

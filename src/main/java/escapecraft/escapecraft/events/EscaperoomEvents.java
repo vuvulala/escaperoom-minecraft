@@ -1,5 +1,8 @@
-package escapecraft.escapecraft;
+package escapecraft.escapecraft.events;
 
+import escapecraft.escapecraft.Escaperoom;
+import escapecraft.escapecraft.Gamer;
+import escapecraft.escapecraft.QuestionObject;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -24,18 +27,10 @@ public class EscaperoomEvents implements Listener {
 
         try {
             System.out.println("player joined. Trying to assemble gamer..");
-            questionObjects.add(new QuestionObject("svar 1", false));
-            questionObjects.add(new QuestionObject("svar 2", false));
-            questionObjects.add(new QuestionObject("svar 3", false));
-            questionObjects.add(new QuestionObject("svar 4", true));
             gamer = new Gamer(questionObjects);
             System.out.println("gaming!");
-            System.out.println(gamer.getQuestion(1));
-
             escaperoom.addPlayer(player);
             escaperoom.addGamer(player, gamer);
-//            System.out.println(escaperoom.GetGamer(player).getQuestion(1));
-
             } catch(Exception e) {System.out.println(e);}
         }
     @EventHandler
