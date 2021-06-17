@@ -58,10 +58,11 @@ public class Gamer {
 
     public AnswerObject getAnswer(Integer answerIndex) {
         try {
-            if (answerIndex >= this.questionObjects.size()) return new AnswerObject("", false);
+            if (answerIndex >= this.questionObjects.get(questionIndex).getAnswers().size()) return new AnswerObject("", false);
             return this.questionObjects.get(this.questionIndex).getAnswer(answerIndex);
         } catch (Exception e) {return new AnswerObject("", false);}
     }
+
     public AnswerObject signTextToAnswer (String answerString) {
         int answerIndex = 0;
         for (int i=0; i<4; i++) {
@@ -79,6 +80,10 @@ public class Gamer {
             this.gamerboi.performCommand("/spawn");
             return false;
         }
+        for(AnswerObject answer : this.questionObjects.get(questionIndex).getAnswers()) {
+            this.gamerboi.sendMessage("" + answer.getText() + " |?| " + answer.isCorrect());
+        }
+
         this.bossbar.setTitle(this.getQuestion().getTitle());
         this.teleport();
         return true;
