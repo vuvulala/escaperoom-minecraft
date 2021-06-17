@@ -1,6 +1,7 @@
 package escapecraft.escapecraft;
 
 import escapecraft.escapecraft.commands.*;
+import escapecraft.escapecraft.events.CheckAnswerEvent;
 import escapecraft.escapecraft.events.EscaperoomEvents;
 import escapecraft.escapecraft.managers.ChatManager;
 import org.bukkit.Bukkit;
@@ -49,6 +50,7 @@ public final class Escapecraft extends JavaPlugin implements Listener {
 
         Bukkit.getPluginManager().registerEvents(this, this);
         Bukkit.getPluginManager().registerEvents(new ChatManager(), this);
+        Bukkit.getPluginManager().registerEvents(new CheckAnswerEvent(), this);
         Bukkit.getPluginManager().registerEvents(new EscaperoomEvents(), this);
         new SignPlaceholders();
 
@@ -56,16 +58,5 @@ public final class Escapecraft extends JavaPlugin implements Listener {
 
     public void onDisable() {
         // Plugin shutdown logic
-    }
-
-    @EventHandler
-    public void signInteract(PlayerInteractEvent event) {
-        if (event.getAction() != Action.RIGHT_CLICK_BLOCK) return;
-        Block block = event.getClickedBlock();
-
-        if (!Tag.SIGNS.isTagged(block.getType())) return;
-
-        Sign sign = (Sign) block.getState();
-        event.getPlayer().sendMessage(sign.line(0));
     }
 }

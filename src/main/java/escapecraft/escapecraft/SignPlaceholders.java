@@ -20,7 +20,7 @@ public class SignPlaceholders {
                 int finalIndex = index;
                 ISP.addPlaceholder(new Placeholder("answer_" + answerNumber) {
                     @Override public String getValue(Player player, Location location, String[] modifiers, Boolean elevation) {
-                        return "" + Escaperoom.getGamer(player).getAnswer(finalIndex);
+                        return "" + Escaperoom.getGamer(player).getAnswer(finalIndex).getText();
                     }
                 });
             }

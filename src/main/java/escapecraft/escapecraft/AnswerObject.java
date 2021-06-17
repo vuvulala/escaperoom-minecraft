@@ -10,5 +10,5 @@ public class AnswerObject {
     }
 
     public String getText() { return this.questionString; }
-    public Boolean IsCorrect() { return this.isCorrect; }
+    public Boolean isCorrect() { return this.isCorrect; }
 }

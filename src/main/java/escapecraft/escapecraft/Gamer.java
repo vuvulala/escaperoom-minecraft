@@ -20,5 +20,5 @@ public class Gamer {
         if(questionIndex >= this.questionObjects.size()) return new QuestionObject();
         return this.questionObjects.get(questionIndex);
     };
-    public String getAnswer(Integer answerIndex) { return this.questionObjects.get(this.questionIndex).getAnswer(answerIndex).getText(); }
+    public AnswerObject getAnswer(Integer answerIndex) { return this.questionObjects.get(this.questionIndex).getAnswer(answerIndex); }
 }

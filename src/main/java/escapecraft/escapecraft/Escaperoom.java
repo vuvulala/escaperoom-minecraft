@@ -22,4 +22,11 @@ public class Escaperoom {
     public static Gamer addGamer(Player player, Gamer gamer) { return gamers.put(player, gamer); }
     public static Gamer removeGamer(Player player) { return gamers.remove(player); }
     public static Gamer getGamer(Player player) { return gamers.get(player); }
+
+    public static boolean signAnswer(int answerIndex, Player player) {
+        System.out.println(answerIndex);
+        if (! getGamer(player).getAnswer(answerIndex).isCorrect()) return false;
+
+        return true;
+    }
 }
