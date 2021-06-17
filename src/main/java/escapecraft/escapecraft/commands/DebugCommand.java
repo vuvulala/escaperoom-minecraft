@@ -1,18 +1,19 @@
 package escapecraft.escapecraft.commands;
 
 import dev.jorel.commandapi.CommandAPICommand;
-import dev.jorel.commandapi.arguments.*;
+import dev.jorel.commandapi.arguments.Argument;
 import escapecraft.escapecraft.managers.ChatManager;
+import org.bukkit.event.Listener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChatCommand {
-
-    public ChatCommand() {
+public class DebugCommand implements Listener {
+    public DebugCommand() {
         List<Argument> arguments = new ArrayList<>();
 
-        new CommandAPICommand("chat")
+        new CommandAPICommand("debug")
+                .withSubcommand(new CommandAPICommand("chat")
                 .withSubcommand(new CommandAPICommand("enable")
                         .executes((sender, args) -> {
                             ChatManager.chatEnabled = true;
@@ -24,7 +25,8 @@ public class ChatCommand {
                             ChatManager.chatEnabled = false;
                             sender.sendMessage("Chat disabled!");
                         })
-                )
+                ))
                 .register();
     }
+
 }

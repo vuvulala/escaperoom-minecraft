@@ -23,7 +23,7 @@ public final class Escapecraft extends JavaPlugin implements Listener {
 
     public void onEnable() {
         // Plugin startup logic
-        new ChatCommand();
+        // new ChatCommand();
         Escaperoom escaperoom = new Escaperoom();
 
         Gamer gamer;
@@ -43,6 +43,7 @@ public final class Escapecraft extends JavaPlugin implements Listener {
 
         Bukkit.getPluginManager().registerEvents(this, this);
         Bukkit.getPluginManager().registerEvents(new ChatManager(), this);
+        Bukkit.getPluginManager().registerEvents(new DebugCommand(), this);
         Bukkit.getPluginManager().registerEvents(new EscaperoomEvents(escaperoom), this);
         new SignPlaceholders(escaperoom);
 
