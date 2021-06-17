@@ -40,7 +40,7 @@ public class QuizLoader {
             for(JsonElement tmp1 : JSONAnswers) {
                 JsonObject JSONAnswer = tmp1.getAsJsonObject();
 
-                tmpQuestion.addAnswer(new AnswerObject(JSONAnswer.get("answer").getAsString(), false));
+                tmpQuestion.addAnswer(new AnswerObject(JSONAnswer.get("answer").getAsString(), JSONAnswer.get("correct").getAsBoolean()));
                 System.out.print("answer: ");
                 System.out.print(JSONAnswer.get("answer").getAsString());
                 System.out.print(" | correct: ");
