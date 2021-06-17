@@ -53,13 +53,13 @@ public class Gamer {
     }
 
     public AnswerObject getAnswer(Integer answerIndex) {
-        if (this.questionObjects.isEmpty()) return null;
         if (answerIndex >= this.questionObjects.size()) return null;
         return this.questionObjects.get(this.questionIndex).getAnswer(answerIndex);
     }
     public AnswerObject signTextToAnswer (String answerString) {
         int answerIndex = 0;
         for (int i=0; i<questionObjects.size(); i++) {
+            System.out.println("WIERD MODDA FOKKA");
             if (answerString.compareToIgnoreCase("{answer_" + (i+1) + "}") == 0) {
                 answerIndex = i;
             }
