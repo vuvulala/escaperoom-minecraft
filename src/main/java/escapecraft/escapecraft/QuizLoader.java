@@ -5,6 +5,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import javax.sound.midi.SysexMessage;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -12,7 +13,11 @@ import java.util.ArrayList;
 
 public class QuizLoader {
     public static ArrayList<QuestionObject> getQuiz(String questionName) {
-        if(!quizExists(questionName)) return getEmptyQuizArray();
+        if(!quizExists(questionName)) {
+            ArrayList<QuestionObject> tmp =  getEmptyQuizArray();
+            tmp.add(new QuestionObject());
+            return tmp;
+        }
 
         JsonObject object = getObject(questionName);
         if(object.getAsJsonArray("questions") == null) return getEmptyQuizArray();
@@ -21,16 +26,29 @@ public class QuizLoader {
 
         JsonArray JSONQuestions = object.getAsJsonArray("questions");
 
+
         for(JsonElement tmp : JSONQuestions) {
             JsonObject JSONQuestion = tmp.getAsJsonObject();
 
             String questionTitle = JSONQuestion.get("question").getAsString();
+
+            System.out.println(questionTitle);
+            JsonArray JSONAnswers = JSONQuestion.getAsJsonArray("answers");
+
+            QuestionObject tmpQuestion = new QuestionObject(questionTitle);
+
+            for(JsonElement tmp1 : JSONAnswers) {
+                JsonObject JSONAnswer = tmp1.getAsJsonObject();
+
+                tmpQuestion.addAnswer(new AnswerObject(JSONAnswer.get("answer").getAsString(), false));
+                System.out.print("answer: ");
+                System.out.print(JSONAnswer.get("answer").getAsString());
+                System.out.print(" | correct: ");
+                System.out.println(JSONAnswer.get("correct").getAsBoolean());
+            }
+
+            questions.add(tmpQuestion);
         }
-
-        questions.add(new QuestionObject());
-        questions.get(0).addAnswer(new AnswerObject("yes hello", true));
-
-
 
         return questions;
     }
@@ -53,7 +71,7 @@ public class QuizLoader {
         return object;
     }
 
-    private static boolean quizExists(String questionName) {
+    public static boolean quizExists(String questionName) {
         try {
             System.out.println("Checking file " + "./plugins/escapecraft/" + questionName + ".json");
             Files.readString(Path.of("./plugins/escapecraft/" + questionName + ".json"));

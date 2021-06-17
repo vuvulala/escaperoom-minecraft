@@ -16,7 +16,7 @@ import java.util.List;
 public class EscaperoomEvents implements Listener {
     escapecraft.escapecraft.Escaperoom Escaperoom;
 
-    EscaperoomEvents() {
+    public EscaperoomEvents() {
     }
 
     @EventHandler
