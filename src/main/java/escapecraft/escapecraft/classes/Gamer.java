@@ -1,7 +1,8 @@
-package escapecraft.escapecraft;
+package escapecraft.escapecraft.classes;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import escapecraft.escapecraft.managers.JsonLoader;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.boss.*;
