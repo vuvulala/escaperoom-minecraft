@@ -26,8 +26,6 @@ public final class Escapecraft extends JavaPlugin implements Listener {
         // Plugin startup logic
         new ChatCommand();
         new StartCommand();
-
-        Gamer gamer;
         /*ArrayList<AnswerObject> answerObjects = new ArrayList();
         System.out.println("Assembling gamer..");
         answerObjects.add(new AnswerObject("svar 1", false));
@@ -39,17 +37,13 @@ public final class Escapecraft extends JavaPlugin implements Listener {
         System.out.println(qu.size());*/
 
         ArrayList<QuestionObject> questions = QuizLoader.getQuiz("idk");
-
-        gamer = new Gamer(questions);
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            Escaperoom.addGamer(player, new Gamer(player, questions));
+        }
         System.out.println("Assembly complete!");
 
-        System.out.println(gamer.getQuestion(1));
-
-        for (Player player : Bukkit.getOnlinePlayers()) {
-            Escaperoom.addGamer(player, gamer);
-        }
-
         Bukkit.getPluginManager().registerEvents(this, this);
+        Bukkit.getPluginManager().registerEvents(new Debug(), this);
         Bukkit.getPluginManager().registerEvents(new ChatManager(), this);
         Bukkit.getPluginManager().registerEvents(new CheckAnswerEvent(), this);
         Bukkit.getPluginManager().registerEvents(new EscaperoomEvents(), this);
