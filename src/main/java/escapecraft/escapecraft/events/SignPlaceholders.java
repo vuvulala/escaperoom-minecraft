@@ -1,7 +1,8 @@
-package escapecraft.escapecraft;
+package escapecraft.escapecraft.events;
 
 import com.empcraft.InSignsPlus;
 import com.empcraft.Placeholder;
+import escapecraft.escapecraft.managers.Escaperoom;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
@@ -11,7 +12,7 @@ import static org.bukkit.Bukkit.getServer;
 public class SignPlaceholders {
     public final Integer maxAnswers = 4;
 
-    SignPlaceholders() {
+    public SignPlaceholders() {
         Plugin inSignsPlus = getServer().getPluginManager().getPlugin("InSignsPlus");
         if ((inSignsPlus != null) && inSignsPlus.isEnabled()) {
             InSignsPlus ISP = (InSignsPlus) inSignsPlus;

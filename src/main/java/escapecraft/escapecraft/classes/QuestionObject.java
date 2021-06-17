@@ -1,11 +1,11 @@
-package escapecraft.escapecraft;
+package escapecraft.escapecraft.classes;
 
 import java.util.ArrayList;
 
 public class QuestionObject {
     private String title;
 
-    private ArrayList<AnswerObject> answers = new ArrayList<AnswerObject>(4);
+    private ArrayList<AnswerObject> answers = new ArrayList(4);
     public QuestionObject(ArrayList<AnswerObject> newAnswers, String title) {
         answers.addAll(newAnswers);
         this.title = title;

@@ -1,4 +1,4 @@
-package escapecraft.escapecraft;
+package escapecraft.escapecraft.managers;
 
 import com.google.gson.*;
 
