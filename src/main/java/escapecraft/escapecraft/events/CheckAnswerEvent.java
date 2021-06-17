@@ -21,7 +21,6 @@ public class CheckAnswerEvent implements Listener {
         String signText = sign.getLine(0);
 
         boolean temp = Escaperoom.getGamer(player).signTextToAnswer(signText).isCorrect();
-        System.out.println(temp);
         if (temp) Escaperoom.getGamer(player).nextQuestion();
     }
 
