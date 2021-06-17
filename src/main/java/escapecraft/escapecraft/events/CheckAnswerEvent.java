@@ -22,6 +22,7 @@ public class CheckAnswerEvent implements Listener {
         Sign sign = (Sign) event.getClickedBlock().getState();
         String signText = sign.getLine(0);
 
+        System.out.println("PLAYER INTERACTED WITH SIGN!");
         boolean temp = Escaperoom.getGamer(player).signTextToAnswer(signText).isCorrect();
         if (temp) Escaperoom.getGamer(player).nextQuestion();
         player.sendMessage(""+temp);
