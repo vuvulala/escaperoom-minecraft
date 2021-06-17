@@ -33,6 +33,10 @@ public class QuestionObject {
         return answers.get(index);
     }
 
+    public ArrayList<AnswerObject> getAnswers() {
+        return answers;
+    }
+
     public String getTitle() {
         return this.title;
     }
