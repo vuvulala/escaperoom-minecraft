@@ -5,6 +5,8 @@ import dev.jorel.commandapi.arguments.*;
 import escapecraft.escapecraft.Escaperoom;
 import escapecraft.escapecraft.QuizLoader;
 import escapecraft.escapecraft.managers.ChatManager;
+import org.bukkit.Bukkit;
+import org.bukkit.Server;
 
 import java.util.ArrayList;
 import java.util.List;
