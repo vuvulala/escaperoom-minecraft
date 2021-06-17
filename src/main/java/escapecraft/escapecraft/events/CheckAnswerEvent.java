@@ -2,7 +2,6 @@ package escapecraft.escapecraft.events;
 
 import escapecraft.escapecraft.Escaperoom;
 import org.bukkit.Tag;
-import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
