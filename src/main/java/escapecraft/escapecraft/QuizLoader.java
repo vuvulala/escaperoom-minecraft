@@ -59,8 +59,8 @@ public class QuizLoader {
         String json;
 
         try {
-            System.out.println("Getting file " + "./plugins/escapecraft/" + questionName + ".json");
-            json = Files.readString(Path.of("./plugins/escapecraft/" + questionName + ".json"));
+            System.out.println("Getting file " + "./plugins/escapecraft/quiz/" + questionName + ".json");
+            json = Files.readString(Path.of("./plugins/escapecraft/quiz/" + questionName + ".json"));
         } catch (IOException e) {
             System.out.println("File not found!");
             json = "{}";
@@ -73,8 +73,8 @@ public class QuizLoader {
 
     public static boolean quizExists(String questionName) {
         try {
-            System.out.println("Checking file " + "./plugins/escapecraft/" + questionName + ".json");
-            Files.readString(Path.of("./plugins/escapecraft/" + questionName + ".json"));
+            System.out.println("Checking file " + "./plugins/escapecraft/quiz/" + questionName + ".json");
+            Files.readString(Path.of("./plugins/escapecraft/quiz/" + questionName + ".json"));
             return true;
         } catch (IOException e) {
             System.out.println("File doesn't exist!");

@@ -3,12 +3,3 @@ version: ${project.version}
 main: escapecraft.escapecraft.Escapecraft
 api-version: 1.16
 depend: [CommandAPI, InSignsPlus]
-commands:
-  disable:
-    description: disable chat
-    usage: /<command>
-    permission: "3"
-  enable:
-    description: enable chat
-    usage: /<command>
-    permission: "3"

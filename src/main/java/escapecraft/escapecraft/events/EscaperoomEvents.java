@@ -23,36 +23,15 @@ public class EscaperoomEvents implements Listener {
     public void OnPlayerJoin(PlayerJoinEvent event) {
         List<AnswerObject> answerObjects = new ArrayList();
         Player player = event.getPlayer();
-        Gamer gamer;
+        Gamer gamer = new Gamer();
 
-        try {
-            System.out.println("player joined. Trying to assemble gamer..");
-
-            ArrayList<AnswerObject> tmpAnswers = new ArrayList();
-            System.out.println("Assembling gamer..");
-            answerObjects.add(new AnswerObject("svar 1", false));
-            answerObjects.add(new AnswerObject("svar 2", false));
-            answerObjects.add(new AnswerObject("svar 3", false));
-            answerObjects.add(new AnswerObject("svar 4", true ));
-            ArrayList<QuestionObject> qu = new ArrayList<QuestionObject>();
-            qu.add(new QuestionObject(tmpAnswers));
-
-            gamer = new Gamer(qu);
-            System.out.println("gaming!");
-            System.out.println(gamer.getQuestion(1));
-
-            Escaperoom.addPlayer(player);
-            Escaperoom.addGamer(player, gamer);
-//            System.out.println(escaperoom.GetGamer(player).getQuestion(1));
-
-            } catch(Exception e) {System.out.println(e);}
+        escapecraft.escapecraft.Escaperoom.addGamer(player, gamer);
         }
     @EventHandler
     public void OnPlayerQuit(PlayerQuitEvent event) {
         try {
         System.out.println("Player left the gaem.,.");
         Player player = event.getPlayer();
-        Escaperoom.removePlayer(player);
         Escaperoom.removeGamer(player);
         } catch(Exception e) {System.out.println(e);}
     }

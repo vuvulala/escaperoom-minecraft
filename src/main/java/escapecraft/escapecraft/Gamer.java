@@ -11,10 +11,21 @@ public class Gamer {
         this.questionObjects.addAll(newQuestionObject);
     }
 
+    public Gamer() {
+
+    }
+
     public int increase() {return this.questionIndex++;}
-    public QuestionObject getQuestionObject(Integer index) { return this.questionObjects.get(index); }
+    public void reset() {this.questionIndex = 0;}
     public Boolean addQuestionObject(QuestionObject answerObject) { return this.questionObjects.add(answerObject); }
     public Boolean addAllQuestionObjects(List<QuestionObject> answerObjects) { return this.questionObjects.addAll(answerObjects); }
+    public Boolean setAllQuestions(ArrayList<QuestionObject> questions) {
+        this.questionIndex = 0;
+        this.questionObjects.clear();
+        this.questionObjects.addAll(questions);
+        return true;
+    }
+
     public QuestionObject getQuestion() { return this.questionObjects.get(this.questionIndex); }
     public QuestionObject getQuestion(Integer questionIndex) {
         if(questionIndex >= this.questionObjects.size()) return new QuestionObject();

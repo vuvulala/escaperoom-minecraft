@@ -30,6 +30,7 @@ public class CheckAnswerEvent implements Listener {
 
         boolean temp = Escaperoom.signAnswer(answerIndex, player);
         player.sendMessage(""+temp);
+        if(temp) Escaperoom.getGamer(player).increase();
     }
 
 }

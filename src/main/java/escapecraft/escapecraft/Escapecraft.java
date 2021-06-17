@@ -25,6 +25,7 @@ public final class Escapecraft extends JavaPlugin implements Listener {
     public void onEnable() {
         // Plugin startup logic
         new ChatCommand();
+        new StartCommand();
 
         Gamer gamer;
         /*ArrayList<AnswerObject> answerObjects = new ArrayList();
