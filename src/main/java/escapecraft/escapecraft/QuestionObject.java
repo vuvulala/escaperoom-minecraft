@@ -15,6 +15,11 @@ public class QuestionObject {
         this.title = title;
     }
 
+    public QuestionObject(ArrayList<AnswerObject> newAnswers) {
+        this.title = "UNDEFINED TITLE";
+        answers.addAll(newAnswers);
+    }
+
     public QuestionObject() {
         this.title = "UNDEFINED TITLE";
     }
