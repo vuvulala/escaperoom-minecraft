@@ -104,6 +104,7 @@ public class EscaperoomCommand implements Listener {
                             player.sendMessage(tc);
                             room++;
                         }
+                        player.sendMessage(" \n");
                     }))
             .register();
     }
