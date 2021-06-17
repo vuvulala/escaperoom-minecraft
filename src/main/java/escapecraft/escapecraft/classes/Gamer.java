@@ -1,7 +1,7 @@
-package escapecraft.escapecraft;
+package escapecraft.escapecraft.classes;
 
 import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
+import escapecraft.escapecraft.managers.JsonLoader;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.boss.*;
@@ -11,26 +11,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Gamer {
-    private Player gamerboi;
+    private Player player;
     private List<QuestionObject> questionObjects = new ArrayList();
     private int questionIndex = 0;
     private BossBar bossbar;
 
     public Gamer(Player player, List<QuestionObject> newQuestionObject) {
-        this.gamerboi = player;
+        this.player = player;
         this.questionObjects.addAll(newQuestionObject);
         this.createBossbar();
     }
 
     public Gamer(Player player) {
-        this.gamerboi = player;
+        this.player = player;
         this.createBossbar();
     }
 
     public boolean startQuiz() {
         this.reset();
         this.bossbar.setTitle(this.getQuestion().getTitle());
-        this.bossbar.addPlayer(this.gamerboi);
+        this.bossbar.addPlayer(this.player);
         this.teleport();
         return true;
     }
@@ -50,10 +50,10 @@ public class Gamer {
     public QuestionObject getQuestion(Integer questionIndex) {
         if(questionIndex >= this.questionObjects.size()) return new QuestionObject();
         return this.questionObjects.get(questionIndex);
-    };
+    }
 
     public Player getPlayer() {
-        return this.gamerboi;
+        return this.player;
     }
 
     public AnswerObject getAnswer(Integer answerIndex) {
@@ -77,11 +77,11 @@ public class Gamer {
         this.increase();
         if (this.questionIndex >= this.questionObjects.size()) {
             this.bossbar.removeAll();
-            this.gamerboi.performCommand("/spawn");
+            this.player.performCommand("/spawn");
             return false;
         }
         for(AnswerObject answer : this.questionObjects.get(questionIndex).getAnswers()) {
-            this.gamerboi.sendMessage("" + answer.getText() + " |?| " + answer.isCorrect());
+            this.player.sendMessage("" + answer.getText() + " |?| " + answer.isCorrect());
         }
 
         this.bossbar.setTitle(this.getQuestion().getTitle());
@@ -97,7 +97,7 @@ public class Gamer {
         int posY = jsonElement.getAsJsonObject().get("y").getAsInt();
         int posZ = jsonElement.getAsJsonObject().get("z").getAsInt();
 
-        this.gamerboi.teleport(new Location(this.gamerboi.getWorld(), posX, posY, posZ));
+        this.player.teleport(new Location(this.player.getWorld(), posX, posY, posZ));
     }
 
     private void createBossbar() {

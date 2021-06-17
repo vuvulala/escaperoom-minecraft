@@ -1,6 +1,7 @@
 package escapecraft.escapecraft.commands;
 
 import dev.jorel.commandapi.CommandAPICommand;
+import dev.jorel.commandapi.CommandPermission;
 import dev.jorel.commandapi.arguments.*;
 import escapecraft.escapecraft.managers.ChatManager;
 
@@ -10,9 +11,8 @@ import java.util.List;
 public class ChatCommand {
 
     public ChatCommand() {
-        List<Argument> arguments = new ArrayList<>();
-
         new CommandAPICommand("chat")
+                .withPermission(CommandPermission.OP)
                 .withSubcommand(new CommandAPICommand("enable")
                         .executes((sender, args) -> {
                             ChatManager.chatEnabled = true;

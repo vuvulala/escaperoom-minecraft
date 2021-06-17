@@ -1,9 +1,11 @@
-package escapecraft.escapecraft;
+package escapecraft.escapecraft.managers;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import escapecraft.escapecraft.classes.AnswerObject;
+import escapecraft.escapecraft.classes.QuestionObject;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -82,7 +84,6 @@ public class QuizLoader {
     }
 
     private static ArrayList<QuestionObject> getEmptyQuizArray() {
-        ArrayList<QuestionObject> questions = new ArrayList();
-        return questions;
+        return new ArrayList<>();
     }
 }

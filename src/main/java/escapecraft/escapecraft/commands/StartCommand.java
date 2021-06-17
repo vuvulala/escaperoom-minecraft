@@ -2,18 +2,13 @@ package escapecraft.escapecraft.commands;
 
 import dev.jorel.commandapi.CommandAPICommand;
 import dev.jorel.commandapi.arguments.*;
-import escapecraft.escapecraft.Escaperoom;
-import escapecraft.escapecraft.Gamer;
-import escapecraft.escapecraft.QuizLoader;
-
-import java.util.ArrayList;
-import java.util.List;
+import escapecraft.escapecraft.managers.Escaperoom;
+import escapecraft.escapecraft.classes.Gamer;
+import escapecraft.escapecraft.managers.QuizLoader;
 
 public class StartCommand {
 
     public StartCommand() {
-        List<Argument> arguments = new ArrayList<>();
-
         new CommandAPICommand("start")
                 .withArguments(new GreedyStringArgument("quiz navn"))
                         .executesPlayer((player, args) -> {
@@ -26,8 +21,6 @@ public class StartCommand {
                             gamer.startQuiz();
 
                             System.out.println("existing");
-
-
                         })
                 .register();
     }

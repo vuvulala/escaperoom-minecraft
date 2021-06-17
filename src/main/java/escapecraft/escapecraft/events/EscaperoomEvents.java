@@ -1,7 +1,7 @@
 package escapecraft.escapecraft.events;
 
-import escapecraft.escapecraft.AnswerObject;
-import escapecraft.escapecraft.Gamer;
+import escapecraft.escapecraft.classes.AnswerObject;
+import escapecraft.escapecraft.classes.Gamer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EscaperoomEvents implements Listener {
-    escapecraft.escapecraft.Escaperoom Escaperoom;
+    escapecraft.escapecraft.managers.Escaperoom Escaperoom;
 
     public EscaperoomEvents() {
     }

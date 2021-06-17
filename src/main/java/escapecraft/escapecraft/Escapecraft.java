@@ -3,6 +3,7 @@ package escapecraft.escapecraft;
 import escapecraft.escapecraft.commands.*;
 import escapecraft.escapecraft.events.CheckAnswerEvent;
 import escapecraft.escapecraft.events.EscaperoomEvents;
+import escapecraft.escapecraft.events.SignPlaceholders;
 import escapecraft.escapecraft.managers.ChatManager;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
