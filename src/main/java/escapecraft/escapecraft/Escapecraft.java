@@ -32,9 +32,9 @@ public final class Escapecraft extends JavaPlugin implements Listener {
         answerObjects.add(new AnswerObject("svar 2", false));
         answerObjects.add(new AnswerObject("svar 3", false));
         answerObjects.add(new AnswerObject("svar 4", true ));
-        ArrayList<QuestionObject> qu = new ArrayList<QuestionObject>();
+        ArrayList<QuestionObject> qu = new ArrayList();
         qu.add(new QuestionObject(answerObjects));
-
+        System.out.println(qu.size());
         gamer = new Gamer(qu);
         System.out.println("Assembly complete!");
         System.out.println(gamer.getQuestion(1));

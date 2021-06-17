@@ -9,7 +9,6 @@ public class QuestionObject {
     }
 
     public QuestionObject() {
-
     }
 
     public void addAnswer(AnswerObject newAnswer) {
@@ -17,6 +16,7 @@ public class QuestionObject {
     }
 
     public AnswerObject getAnswer(int index) {
+        if(index >= answers.size()) return new AnswerObject("...scrub", false);
         return answers.get(index);
     }
 }
