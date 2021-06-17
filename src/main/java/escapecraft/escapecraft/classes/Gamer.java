@@ -80,9 +80,6 @@ public class Gamer {
             this.player.performCommand("spawn");
             return false;
         }
-        for(AnswerObject answer : this.questionObjects.get(questionIndex).getAnswers()) {
-            this.player.sendMessage("" + answer.getText() + " |?| " + answer.isCorrect());
-        }
 
         this.bossbar.setTitle(this.getQuestion().getTitle());
         this.teleport();

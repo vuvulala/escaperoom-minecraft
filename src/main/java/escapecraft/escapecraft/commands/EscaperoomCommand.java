@@ -85,7 +85,6 @@ public class EscaperoomCommand implements Listener {
                         int room = 1;
                         for (JsonElement loopElement : element.getAsJsonArray()) {
 
-                            System.out.println(loopElement.toString());
                             int x = loopElement.getAsJsonObject().get("x").getAsInt();
                             int y = loopElement.getAsJsonObject().get("y").getAsInt();
                             int z = loopElement.getAsJsonObject().get("z").getAsInt();
