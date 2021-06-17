@@ -23,9 +23,8 @@ public class EscaperoomEvents implements Listener {
     public void OnPlayerJoin(PlayerJoinEvent event) {
         List<AnswerObject> answerObjects = new ArrayList();
         Player player = event.getPlayer();
-        Gamer gamer = new Gamer();
-
-        escapecraft.escapecraft.Escaperoom.addGamer(player, gamer);
+        Gamer gamer = new Gamer(player);
+        Escaperoom.addGamer(player, gamer);
         }
     @EventHandler
     public void OnPlayerQuit(PlayerQuitEvent event) {

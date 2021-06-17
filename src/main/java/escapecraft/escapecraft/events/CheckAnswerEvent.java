@@ -20,17 +20,11 @@ public class CheckAnswerEvent implements Listener {
 
         Player player = event.getPlayer();
         Sign sign = (Sign) event.getClickedBlock().getState();
-        int answerIndex = 0;
+        String signText = sign.getLine(0);
 
-        for (int i=0; i<4; i++) {
-            if (sign.getLine(0).toString().compareToIgnoreCase("{answer_" + (i+1) + "}") == 0) {
-                answerIndex = i;
-            }
-        }
-
-        boolean temp = Escaperoom.signAnswer(answerIndex, player);
+        boolean temp = Escaperoom.getGamer(player).signTextToAnswer(signText).isCorrect();
+        if (temp) Escaperoom.getGamer(player).nextQuestion();
         player.sendMessage(""+temp);
-        if(temp) Escaperoom.getGamer(player).increase();
     }
 
 }
