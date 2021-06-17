@@ -1,6 +1,7 @@
 package escapecraft.escapecraft;
 
 import escapecraft.escapecraft.commands.*;
+import escapecraft.escapecraft.events.EscaperoomEvents;
 import escapecraft.escapecraft.managers.ChatManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Tag;
@@ -14,7 +15,6 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public final class Escapecraft extends JavaPlugin implements Listener {

@@ -4,7 +4,7 @@ public class AnswerObject {
     private String questionString;
     private Boolean isCorrect;
 
-    AnswerObject(String questionString, Boolean isCorrect) {
+    public AnswerObject(String questionString, Boolean isCorrect) {
         this.questionString = questionString;
         this.isCorrect = isCorrect;
     }
