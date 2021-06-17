@@ -75,23 +75,27 @@ public class Gamer {
 
     public boolean nextQuestion() {
         this.increase();
+
         if (this.questionIndex >= this.questionObjects.size()) {
             this.bossbar.removeAll();
             this.player.performCommand("/spawn");
             return false;
         }
-        for(AnswerObject answer : this.questionObjects.get(questionIndex).getAnswers()) {
-            this.player.sendMessage("" + answer.getText() + " |?| " + answer.isCorrect());
-        }
-
         this.bossbar.setTitle(this.getQuestion().getTitle());
         this.teleport();
         return true;
     }
 
     public void teleport() {
-        JsonElement jsonElement = JsonLoader.getElement("./plugins/escapecraft/escaperoom/room1.json");
-        jsonElement = jsonElement.getAsJsonArray().get(questionIndex).getAsJsonObject();
+        JsonElement jsonElement;
+        try {
+            jsonElement = JsonLoader.getElement("./plugins/escapecraft/escaperoom/room1.json");
+            jsonElement = jsonElement.getAsJsonArray().get(questionIndex).getAsJsonObject();
+        } catch(IllegalStateException e) {
+            System.out.println("ROOM NOT FOUND!");
+            return;
+        }
+
         int posX = jsonElement.getAsJsonObject().get("x").getAsInt();
         int posY = jsonElement.getAsJsonObject().get("y").getAsInt();
         int posZ = jsonElement.getAsJsonObject().get("z").getAsInt();

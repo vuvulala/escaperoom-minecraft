@@ -23,10 +23,8 @@ public class JsonLoader {
         String json;
 
         try {
-            System.out.println("Getting file " + filePath);
             json = Files.readString(filePath);
         } catch (IOException e) {
-            System.out.println("File not found!\nGiving OP permissions to user: 'Old_Grill'");
             json = "{}";
         }
 

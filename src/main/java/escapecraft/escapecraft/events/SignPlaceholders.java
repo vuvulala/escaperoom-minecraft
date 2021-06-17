@@ -19,7 +19,6 @@ public class SignPlaceholders {
             for (int index = 0; index < maxAnswers; index++) {
                 int answerNumber = index + 1;
                 int finalIndex = index;
-                System.out.println("adding placeholder called " + answerNumber);
                 ISP.addPlaceholder(new Placeholder("answer_" + answerNumber) {
                     @Override public String getValue(Player player, Location location, String[] modifiers, Boolean elevation) {
                         return "" + Escaperoom.getGamer(player).getAnswer(finalIndex).getText();

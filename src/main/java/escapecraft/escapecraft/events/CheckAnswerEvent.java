@@ -18,7 +18,7 @@ public class CheckAnswerEvent implements Listener {
 
         Player player = event.getPlayer();
         Sign sign = (Sign) event.getClickedBlock().getState();
-        String signText = sign.line(0).toString();
+        String signText = sign.getLine(0);
 
         boolean temp = Escaperoom.getGamer(player).signTextToAnswer(signText).isCorrect();
         if (temp) Escaperoom.getGamer(player).nextQuestion();
