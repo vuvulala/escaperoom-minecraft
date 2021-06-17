@@ -18,6 +18,7 @@ public final class Escapecraft extends JavaPlugin implements Listener {
         new ChatCommand();
         new StartCommand();
         new DebugCommand();
+        new EscaperoomCommand();
 
         Bukkit.getPluginManager().registerEvents(this, this);
         Bukkit.getPluginManager().registerEvents(new DebugCommand(), this);
