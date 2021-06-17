@@ -73,7 +73,7 @@ public class EscaperoomCommand implements Listener {
 
                     player.sendMessage("Deleted " + ChatColor.GOLD + "room " + (room+1) + " " + ChatColor.RESET + temp.toString());
 
-                    player.sendMessage("New rooms: \n\n");
+                    player.sendMessage(ChatColor.AQUA + "\nNew rooms: \n\n");
                     player.performCommand("escaperoom rooms");
                 }))
 
