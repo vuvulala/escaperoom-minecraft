@@ -12,7 +12,6 @@ public class Gamer {
     }
 
     public int increase() {return this.questionIndex++;}
-    public QuestionObject getQuestionObject(Integer index) { return this.questionObjects.get(index); }
     public Boolean addQuestionObject(QuestionObject answerObject) { return this.questionObjects.add(answerObject); }
     public Boolean addAllQuestionObjects(List<QuestionObject> answerObjects) { return this.questionObjects.addAll(answerObjects); }
     public QuestionObject getQuestion() { return this.questionObjects.get(this.questionIndex); }
