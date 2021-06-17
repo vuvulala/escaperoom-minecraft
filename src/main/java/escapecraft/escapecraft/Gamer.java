@@ -1,6 +1,9 @@
 package escapecraft.escapecraft;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.boss.*;
 import org.bukkit.entity.Player;
 
@@ -28,6 +31,7 @@ public class Gamer {
         this.reset();
         this.bossbar.setTitle(this.getQuestion().getTitle());
         this.bossbar.addPlayer(this.gamerboi);
+        this.teleport();
         return true;
     }
 
@@ -53,13 +57,14 @@ public class Gamer {
     }
 
     public AnswerObject getAnswer(Integer answerIndex) {
-        if (answerIndex >= this.questionObjects.size()) return null;
-        return this.questionObjects.get(this.questionIndex).getAnswer(answerIndex);
+        try {
+            if (answerIndex >= this.questionObjects.size()) return new AnswerObject("", false);
+            return this.questionObjects.get(this.questionIndex).getAnswer(answerIndex);
+        } catch (Exception e) {return new AnswerObject("", false);}
     }
     public AnswerObject signTextToAnswer (String answerString) {
         int answerIndex = 0;
-        for (int i=0; i<questionObjects.size(); i++) {
-            System.out.println("WIERD MODDA FOKKA");
+        for (int i=0; i<4; i++) {
             if (answerString.compareToIgnoreCase("{answer_" + (i+1) + "}") == 0) {
                 answerIndex = i;
             }
@@ -71,10 +76,23 @@ public class Gamer {
         this.increase();
         if (this.questionIndex >= this.questionObjects.size()) {
             this.bossbar.removeAll();
+            this.gamerboi.performCommand("/spawn");
             return false;
         }
         this.bossbar.setTitle(this.getQuestion().getTitle());
+        this.teleport();
         return true;
+    }
+
+    public void teleport() {
+        JsonElement jsonElement = JsonLoader.getElement("./plugins/escapecraft/escaperoom/room1.json");
+        System.out.println(jsonElement);
+        jsonElement = jsonElement.getAsJsonArray().get(questionIndex).getAsJsonObject();
+        int posX = jsonElement.getAsJsonObject().get("x").getAsInt();
+        int posY = jsonElement.getAsJsonObject().get("y").getAsInt();
+        int posZ = jsonElement.getAsJsonObject().get("z").getAsInt();
+
+        this.gamerboi.teleport(new Location(this.gamerboi.getWorld(), posX, posY, posZ));
     }
 
     private void createBossbar() {

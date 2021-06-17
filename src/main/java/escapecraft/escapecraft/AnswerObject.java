@@ -1,7 +1,7 @@
 package escapecraft.escapecraft;
 
 public class AnswerObject {
-    private String questionString;
+    private String questionString = "asdsad";
     private Boolean isCorrect;
 
     public AnswerObject(String questionString, Boolean isCorrect) {

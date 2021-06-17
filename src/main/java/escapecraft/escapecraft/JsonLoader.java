@@ -1,5 +1,6 @@
 package escapecraft.escapecraft;
 
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
@@ -9,9 +10,16 @@ import java.nio.file.Path;
 
 public class JsonLoader {
 
-    public static JsonObject getObject(Path filePath) {
+    public static JsonElement getElement(Path filePath) {
+        return parser(filePath);
+    }
+    public static JsonElement getElement(String fileString) {
+        return parser(Path.of(fileString));
+    }
+
+    private static JsonElement parser(Path filePath) {
         JsonParser parser = new JsonParser();
-        JsonObject object;
+        JsonElement element;
         String json;
 
         try {
@@ -22,8 +30,8 @@ public class JsonLoader {
             json = "{}";
         }
 
-        object = parser.parse(json).getAsJsonObject();
+        element = parser.parse(json);
 
-        return object;
+        return element;
     }
 }
