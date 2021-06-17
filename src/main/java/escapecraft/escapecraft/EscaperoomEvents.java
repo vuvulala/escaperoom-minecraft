@@ -10,30 +10,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EscaperoomEvents implements Listener {
-    Escaperoom escaperoom;
+    Escaperoom Escaperoom;
 
-    EscaperoomEvents(Escaperoom escaperoom) {
-        this.escaperoom = escaperoom;
+    EscaperoomEvents() {
     }
 
     @EventHandler
     public void OnPlayerJoin(PlayerJoinEvent event) {
-        List<QuestionObject> questionObjects = new ArrayList();
+        List<AnswerObject> answerObjects = new ArrayList();
         Player player = event.getPlayer();
         Gamer gamer;
 
         try {
             System.out.println("player joined. Trying to assemble gamer..");
-            questionObjects.add(new QuestionObject("svar 1", false));
-            questionObjects.add(new QuestionObject("svar 2", false));
-            questionObjects.add(new QuestionObject("svar 3", false));
-            questionObjects.add(new QuestionObject("svar 4", true));
-            gamer = new Gamer(questionObjects);
+            answerObjects.add(new AnswerObject("svar 1", false));
+            answerObjects.add(new AnswerObject("svar 2", false));
+            answerObjects.add(new AnswerObject("svar 3", false));
+            answerObjects.add(new AnswerObject("svar 4", true));
+            gamer = new Gamer(answerObjects);
             System.out.println("gaming!");
             System.out.println(gamer.getQuestion(1));
 
-            escaperoom.addPlayer(player);
-            escaperoom.addGamer(player, gamer);
+            Escaperoom.addPlayer(player);
+            Escaperoom.addGamer(player, gamer);
 //            System.out.println(escaperoom.GetGamer(player).getQuestion(1));
 
             } catch(Exception e) {System.out.println(e);}
@@ -43,8 +42,8 @@ public class EscaperoomEvents implements Listener {
         try {
         System.out.println("Player left the gaem.,.");
         Player player = event.getPlayer();
-        escaperoom.removePlayer(player);
-        escaperoom.removeGamer(player);
+        Escaperoom.removePlayer(player);
+        Escaperoom.removeGamer(player);
         } catch(Exception e) {System.out.println(e);}
     }
 }

@@ -3,14 +3,14 @@ package escapecraft.escapecraft;
 import java.util.List;
 
 public class Gamer {
-    private List<QuestionObject> questionObjects;
+    private List<AnswerObject> answerObject;
 
-    Gamer(List<QuestionObject> questionObjects) {
-        this.questionObjects = questionObjects;
+    Gamer(List<AnswerObject> answerObject) {
+        this.answerObject = answerObject;
     }
 
-    public QuestionObject getQuestionObject(Integer index) { return this.questionObjects.get(index); }
-    public Boolean addQuestionObject(QuestionObject questionObject) { return this.questionObjects.add(questionObject); }
-    public Boolean addAllQuestionObjects(List<QuestionObject> questionObjects) { return this.questionObjects.addAll(questionObjects); }
-    public String getQuestion(Integer index) { return this.questionObjects.get(index).GetQuestion(); }
+    public AnswerObject getQuestionObject(Integer index) { return this.answerObject.get(index); }
+    public Boolean addQuestionObject(AnswerObject answerObject) { return this.answerObject.add(answerObject); }
+    public Boolean addAllQuestionObjects(List<AnswerObject> answerObjects) { return this.answerObject.addAll(answerObjects); }
+    public String getQuestion(Integer index) { return this.answerObject.get(index).GetQuestion(); }
 }

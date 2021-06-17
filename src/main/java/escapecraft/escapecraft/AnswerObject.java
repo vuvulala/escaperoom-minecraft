@@ -1,10 +1,10 @@
 package escapecraft.escapecraft;
 
-public class QuestionObject {
+public class AnswerObject {
     private String questionString;
     private Boolean isCorrect;
 
-    QuestionObject(String questionString, Boolean isCorrect) {
+    AnswerObject(String questionString, Boolean isCorrect) {
         this.questionString = questionString;
         this.isCorrect = isCorrect;
     }

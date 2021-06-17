@@ -9,20 +9,20 @@ import java.util.List;
 import java.util.Map;
 
 public class Escaperoom {
-    private final List<Player> players = new ArrayList();
-    private final Map<Player, Gamer> gamers = new HashMap();
+    private static final List<Player> players = new ArrayList();
+    private static final Map<Player, Gamer> gamers = new HashMap();
 
     Escaperoom() {
 
     }
 
-    public Boolean addPlayer(Player player) { return this.players.add(player); }
-    public Boolean removePlayer(Player player) { return this.players.remove(player); }
-    public List<Player> GetPlayers() { return this.players; }
+    public static Boolean addPlayer(Player player) { return players.add(player); }
+    public static Boolean removePlayer(Player player) { return players.remove(player); }
+    public static List<Player> GetPlayers() { return players; }
 
-    public Gamer addGamer(Player player, Gamer gamer) { return this.gamers.put(player, gamer); }
-    public Gamer removeGamer(Player player) { return this.gamers.remove(player); }
-    public Gamer getGamer(Player player) { return this.gamers.get(player); }
+    public static Gamer addGamer(Player player, Gamer gamer) { return gamers.put(player, gamer); }
+    public static Gamer removeGamer(Player player) { return gamers.remove(player); }
+    public static Gamer getGamer(Player player) { return gamers.get(player); }
 
 
 }

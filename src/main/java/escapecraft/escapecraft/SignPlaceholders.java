@@ -11,7 +11,7 @@ import static org.bukkit.Bukkit.getServer;
 public class SignPlaceholders {
     public final Integer maxAnswers = 4;
 
-    SignPlaceholders(Escaperoom escaperoom) {
+    SignPlaceholders() {
         Plugin inSignsPlus = getServer().getPluginManager().getPlugin("InSignsPlus");
         if ((inSignsPlus != null) && inSignsPlus.isEnabled()) {
             InSignsPlus ISP = (InSignsPlus) inSignsPlus;
@@ -20,7 +20,7 @@ public class SignPlaceholders {
                 int finalIndex = index;
                 ISP.addPlaceholder(new Placeholder("answer_" + answerNumber) {
                     @Override public String getValue(Player player, Location location, String[] modifiers, Boolean elevation) {
-                        return "" + escaperoom.getGamer(player).getQuestion(finalIndex);
+                        return "" + Escaperoom.getGamer(player).getQuestion(finalIndex);
                     }
                 });
             }

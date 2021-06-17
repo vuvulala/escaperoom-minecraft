@@ -24,27 +24,26 @@ public final class Escapecraft extends JavaPlugin implements Listener {
     public void onEnable() {
         // Plugin startup logic
         new ChatCommand();
-        Escaperoom escaperoom = new Escaperoom();
 
         Gamer gamer;
-        List<QuestionObject> questionObjects = new ArrayList();
+        List<AnswerObject> answerObjects = new ArrayList();
         System.out.println("Assembling gamer..");
-        questionObjects.add(new QuestionObject("svar 1", false));
-        questionObjects.add(new QuestionObject("svar 2", false));
-        questionObjects.add(new QuestionObject("svar 3", false));
-        questionObjects.add(new QuestionObject("svar 4", true));
-        gamer = new Gamer(questionObjects);
+        answerObjects.add(new AnswerObject("svar 1", false));
+        answerObjects.add(new AnswerObject("svar 2", false));
+        answerObjects.add(new AnswerObject("svar 3", false));
+        answerObjects.add(new AnswerObject("svar 4", true ));
+        gamer = new Gamer(answerObjects);
         System.out.println("Assembly complete!");
         System.out.println(gamer.getQuestion(1));
 
         for (Player player : Bukkit.getOnlinePlayers()) {
-            escaperoom.addGamer(player, gamer);
+            Escaperoom.addGamer(player, gamer);
         }
 
         Bukkit.getPluginManager().registerEvents(this, this);
         Bukkit.getPluginManager().registerEvents(new ChatManager(), this);
-        Bukkit.getPluginManager().registerEvents(new EscaperoomEvents(escaperoom), this);
-        new SignPlaceholders(escaperoom);
+        Bukkit.getPluginManager().registerEvents(new EscaperoomEvents(), this);
+        new SignPlaceholders();
 
     }
 
