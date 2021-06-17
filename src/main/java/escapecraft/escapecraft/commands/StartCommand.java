@@ -12,15 +12,14 @@ public class StartCommand {
         new CommandAPICommand("start")
                 .withArguments(new GreedyStringArgument("quiz navn"))
                         .executesPlayer((player, args) -> {
-                            System.out.println("start command");
-                            if(!QuizLoader.quizExists((String) args[0])) return;
+                            if(!QuizLoader.quizExists((String) args[0])) {
+                                player.sendMessage("that escaperoom doesn't exist!");
+                                return;
+                            }
 
                             Gamer gamer = Escaperoom.getGamer(player);
-                            System.out.println(gamer);
                             gamer.setAllQuestions(QuizLoader.getQuiz((String) args[0]));
                             gamer.startQuiz();
-
-                            System.out.println("existing");
                         })
                 .register();
     }

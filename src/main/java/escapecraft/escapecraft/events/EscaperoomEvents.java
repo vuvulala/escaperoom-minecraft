@@ -27,7 +27,6 @@ public class EscaperoomEvents implements Listener {
     @EventHandler
     public void OnPlayerQuit(PlayerQuitEvent event) {
         try {
-        System.out.println("Player left the gaem.,.");
         Player player = event.getPlayer();
         Escaperoom.removeGamer(player);
         } catch(Exception e) {System.out.println(e);}

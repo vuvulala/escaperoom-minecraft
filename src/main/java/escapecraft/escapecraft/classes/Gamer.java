@@ -91,7 +91,6 @@ public class Gamer {
 
     public void teleport() {
         JsonElement jsonElement = JsonLoader.getElement("./plugins/escapecraft/escaperoom/room1.json");
-        System.out.println(jsonElement);
         jsonElement = jsonElement.getAsJsonArray().get(questionIndex).getAsJsonObject();
         int posX = jsonElement.getAsJsonObject().get("x").getAsInt();
         int posY = jsonElement.getAsJsonObject().get("y").getAsInt();
