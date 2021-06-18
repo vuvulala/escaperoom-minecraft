@@ -89,9 +89,9 @@ public class Gamer {
     public void teleport() {
         JsonElement jsonElement = JsonLoader.getElement("./plugins/escapecraft/escaperoom/room1.json");
         jsonElement = jsonElement.getAsJsonArray().get(questionIndex).getAsJsonObject();
-        int posX = jsonElement.getAsJsonObject().get("x").getAsInt();
-        int posY = jsonElement.getAsJsonObject().get("y").getAsInt();
-        int posZ = jsonElement.getAsJsonObject().get("z").getAsInt();
+        float posX = jsonElement.getAsJsonObject().get("x").getAsInt() + 0.5f;
+        float posY = jsonElement.getAsJsonObject().get("y").getAsInt() + 0.5f;
+        float posZ = jsonElement.getAsJsonObject().get("z").getAsInt() + 0.5f;
 
         this.player.teleport(new Location(this.player.getWorld(), posX, posY, posZ));
     }
